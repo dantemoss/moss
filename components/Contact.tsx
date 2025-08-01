@@ -40,7 +40,7 @@ export default function Contact() {
                   type="text"
                   id="name"
                   name="name"
-                  className="w-full px-4 py-3 bg-background-secondary border border-border-primary rounded-xl text-text-primary placeholder-text-secondary focus:outline-none focus:border-accent-lavender transition-colors duration-200"
+                  className="w-full px-4 py-3 bg-background-secondary border border-border-primary rounded-xl text-text-primary placeholder-text-secondary focus:outline-none focus:border-accent-lavender data-[theme=light]:focus:border-accent-glacier transition-colors duration-200"
                   placeholder="Your name"
                 />
               </div>
@@ -53,7 +53,7 @@ export default function Contact() {
                   type="email"
                   id="email"
                   name="email"
-                  className="w-full px-4 py-3 bg-background-secondary border border-border-primary rounded-xl text-text-primary placeholder-text-secondary focus:outline-none focus:border-accent-lavender transition-colors duration-200"
+                  className="w-full px-4 py-3 bg-background-secondary border border-border-primary rounded-xl text-text-primary placeholder-text-secondary focus:outline-none focus:border-accent-lavender data-[theme=light]:focus:border-accent-glacier transition-colors duration-200"
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -66,7 +66,7 @@ export default function Contact() {
                   id="message"
                   name="message"
                   rows={5}
-                  className="w-full px-4 py-3 bg-background-secondary border border-border-primary rounded-xl text-text-primary placeholder-text-secondary focus:outline-none focus:border-accent-lavender transition-colors duration-200 resize-none"
+                  className="w-full px-4 py-3 bg-background-secondary border border-border-primary rounded-xl text-text-primary placeholder-text-secondary focus:outline-none focus:border-accent-lavender data-[theme=light]:focus:border-accent-glacier transition-colors duration-200 resize-none"
                   placeholder="Tell me about your project..."
                 />
               </div>
@@ -102,7 +102,7 @@ export default function Contact() {
             <div className="space-y-4">
               <a
                 href="mailto:dante@example.com"
-                className="flex items-center gap-3 p-4 bg-background-secondary border border-border-primary rounded-xl hover:border-accent-lavender transition-colors duration-200 group"
+                className="flex items-center gap-3 p-4 bg-background-secondary border border-border-primary rounded-xl hover:border-accent-lavender data-[theme=light]:hover:border-accent-glacier transition-colors duration-200 group"
               >
                 <Mail size={20} className="text-accent-lavender group-hover:text-purple-400 transition-colors duration-200" />
                 <div>

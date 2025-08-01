@@ -354,7 +354,7 @@ export default function TechStackPlayground() {
   }, [])
 
   return (
-    <div className="relative w-full h-96 bg-background-secondary border-2 border-accent-lavender/20 rounded-2xl overflow-hidden shadow-2xl hover:shadow-accent-lavender/10 transition-all duration-500">
+            <div className="relative w-full h-96 bg-background-secondary border-2 border-border-primary rounded-2xl overflow-hidden shadow-2xl hover:shadow-accent-lavender/10 data-[theme=light]:hover:shadow-accent-glacier/10 transition-all duration-500">
       {/* Background grid pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="w-full h-full" style={{
@@ -363,15 +363,15 @@ export default function TechStackPlayground() {
         }} />
       </div>
 
-      {/* Subtle gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-accent-lavender/5 via-transparent to-purple-500/5"></div>
+             {/* Subtle gradient overlay */}
+               <div className="absolute inset-0 bg-gradient-to-br from-accent-lavender/5 via-transparent to-purple-500/5 data-[theme=light]:from-accent-glacier/5 data-[theme=light]:to-blue-500/5"></div>
 
       {/* Score display */}
       <div className="absolute top-4 right-4 z-30">
-        <div className="bg-background-primary/80 backdrop-blur-sm border border-accent-lavender/20 rounded-lg px-3 py-2 shadow-md">
-          <p className="text-sm text-text-primary font-medium">
-            🎯 <span className="text-accent-lavender font-bold">{score}</span>
-          </p>
+                 <div className="bg-background-primary/80 backdrop-blur-sm border border-border-primary rounded-lg px-3 py-2 shadow-md">
+           <p className="text-sm text-text-primary font-medium">
+             🎯 <span className="text-accent-lavender font-bold data-[theme=light]:text-accent-glacier">{score}</span>
+           </p>
         </div>
       </div>
 
@@ -437,14 +437,14 @@ export default function TechStackPlayground() {
         </AnimatePresence>
       </div>
 
-      {/* Instructions overlay */}
-      <div className="absolute bottom-4 left-4 right-4">
-        <div className="bg-background-primary/80 backdrop-blur-sm border border-border-primary rounded-lg p-3">
-          <p className="text-xs text-text-secondary text-center">
-            🎮 Usa WASD o las flechas para mover "Me" y comer las tecnologías
-          </p>
-        </div>
-      </div>
+             {/* Instructions overlay */}
+       <div className="absolute bottom-4 left-4 right-4">
+         <div className="bg-background-primary/80 backdrop-blur-sm border border-border-primary rounded-lg p-3">
+           <p className="text-xs text-text-secondary text-center">
+             🎮 Usa WASD o las flechas para mover "Me" y comer las tecnologías
+           </p>
+         </div>
+       </div>
     </div>
   )
 }
@@ -465,11 +465,11 @@ function PlayerIcon({ player }: PlayerIconProps) {
       className="group"
     >
       <div className="relative">
-        {/* Glow effect */}
-        <div className="absolute inset-0 bg-accent-lavender/20 rounded-full blur-xl animate-pulse"></div>
+                 {/* Glow effect */}
+         <div className="absolute inset-0 bg-accent-lavender/20 rounded-full blur-xl animate-pulse data-[theme=light]:bg-accent-glacier/20"></div>
 
-        {/* Main icon */}
-        <div className="relative w-16 h-16 bg-gradient-to-br from-accent-lavender to-purple-600 rounded-full flex items-center justify-center border-4 border-white/20 shadow-2xl overflow-hidden">
+                 {/* Main icon */}
+         <div className="relative w-16 h-16 bg-gradient-to-br from-accent-lavender to-purple-600 rounded-full flex items-center justify-center border-4 border-accent-lavender/20 data-[theme=light]:border-accent-glacier/20 shadow-2xl overflow-hidden data-[theme=light]:from-accent-glacier data-[theme=light]:to-blue-600">
           <img
             src="/ImageMe.png"
             alt="Me"
@@ -479,10 +479,10 @@ function PlayerIcon({ player }: PlayerIconProps) {
         </div>
 
         {/* Orbiting ring */}
-        <div className="absolute inset-0 -m-1 border border-violet-400/40 rounded-full animate-spin" style={{ animationDuration: '20s' }}></div>
+        <div className="absolute inset-0 -m-1 border border-accent-lavender/40 data-[theme=light]:border-accent-glacier/40 rounded-full animate-spin" style={{ animationDuration: '20s' }}></div>
 
-        {/* Hover effect */}
-        <div className="absolute inset-0 bg-accent-lavender/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                 {/* Hover effect */}
+         <div className="absolute inset-0 bg-accent-lavender/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 data-[theme=light]:bg-accent-glacier/10"></div>
       </div>
     </div>
   )
@@ -495,7 +495,7 @@ interface TechIconDisplayProps {
 function TechIconDisplay({ tech }: TechIconDisplayProps) {
   return (
     <div
-      className="relative flex items-center justify-center rounded-2xl border-2 border-transparent hover:border-accent-lavender/30 transition-all duration-300 group"
+             className="relative flex items-center justify-center rounded-2xl border-2 border-transparent hover:border-accent-lavender/30 data-[theme=light]:hover:border-accent-glacier/30 transition-all duration-300 group"
       style={{
         width: tech.size,
         height: tech.size,
@@ -523,14 +523,14 @@ function TechIconDisplay({ tech }: TechIconDisplayProps) {
         </div>
       )}
 
-      {/* Tooltip */}
-      <motion.div
-        className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-background-primary border border-border-primary rounded-lg px-2 py-1 text-xs text-text-primary whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none"
-        initial={{ y: 5 }}
-        whileHover={{ y: 0 }}
-      >
-        {tech.name} (+{tech.points})
-      </motion.div>
+             {/* Tooltip */}
+       <motion.div
+         className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-background-primary border border-border-primary rounded-lg px-2 py-1 text-xs text-text-primary whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none"
+         initial={{ y: 5 }}
+         whileHover={{ y: 0 }}
+       >
+         {tech.name} (+{tech.points})
+       </motion.div>
     </div>
   )
 } 

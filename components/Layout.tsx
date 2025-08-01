@@ -5,6 +5,8 @@ import { motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import Footer from './Footer'
 import Image from 'next/image'
+import ThemeToggle from './ThemeToggle'
+import { useLanguage } from '@/app/contexts/LanguageContext'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -12,12 +14,13 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { t } = useLanguage()
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' },
+    { name: t('nav.home'), href: '#home' },
+    { name: t('nav.projects'), href: '#projects' },
+    { name: t('nav.about'), href: '#about' },
+    { name: t('nav.contact'), href: '#contact' },
   ]
 
   return (
@@ -54,7 +57,7 @@ export default function Layout({ children }: LayoutProps) {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="text-text-secondary hover:text-accent-lavender transition-colors duration-200 font-medium"
+                                         className="text-text-secondary hover:text-accent-glacier transition-colors duration-200 font-medium"
                   >
                     {item.name}
                   </motion.a>
@@ -66,7 +69,7 @@ export default function Layout({ children }: LayoutProps) {
             <div className="md:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-text-secondary hover:text-accent-lavender transition-colors duration-200"
+                                 className="text-text-secondary hover:text-accent-glacier transition-colors duration-200"
               >
                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -87,7 +90,7 @@ export default function Layout({ children }: LayoutProps) {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="block px-3 py-2 text-text-secondary hover:text-accent-lavender transition-colors duration-200"
+                                     className="block px-3 py-2 text-text-secondary hover:text-accent-glacier transition-colors duration-200"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
@@ -97,6 +100,9 @@ export default function Layout({ children }: LayoutProps) {
           </motion.div>
         )}
       </nav>
+
+      {/* Theme Toggle */}
+      <ThemeToggle />
 
       {/* Main Content */}
       <main className="pt-16">

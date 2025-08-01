@@ -80,7 +80,7 @@ const projects: Project[] = [
 // Linux Window Component
 function LinuxWindow({ children, title }: { children: React.ReactNode; title: string }) {
   return (
-    <div className="bg-background-secondary border border-border-primary rounded-lg shadow-2xl">
+            <div className="bg-background-secondary border border-border-primary rounded-lg shadow-2xl">
       {/* Window Title Bar */}
       <div className="bg-gradient-to-r from-gray-700 to-gray-800 px-4 py-2 flex items-center justify-between">
         {/* Window Controls */}
@@ -95,7 +95,7 @@ function LinuxWindow({ children, title }: { children: React.ReactNode; title: st
           <div className="w-4 h-4 bg-accent-lavender/20 rounded flex items-center justify-center">
             <span className="text-xs text-accent-lavender">📁</span>
           </div>
-          <span className="text-sm text-text-primary font-medium">{title}</span>
+          <span className="text-sm text-white font-medium data-[theme=dark]:text-text-primary">{title}</span>
         </div>
         
         {/* Spacer for centering */}
@@ -200,8 +200,7 @@ export default function Projects() {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 bg-accent-lavender/10 border border-accent-lavender/30 rounded-lg text-accent-lavender hover:bg-accent-lavender/20 transition-all duration-200 text-sm font-medium"
-                      >
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-accent-glacier/10 border border-border-primary rounded-lg text-accent-glacier hover:bg-accent-glacier/20 data-[theme=dark]:bg-accent-lavender/10 data-[theme=dark]:text-accent-lavender data-[theme=dark]:hover:bg-accent-lavender/20 transition-all duration-200 text-sm font-medium"                      >
                         Ver Demo
                       </a>
                     )}
@@ -210,7 +209,7 @@ export default function Projects() {
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 bg-background-primary/60 border border-border-primary rounded-lg text-text-secondary hover:text-accent-lavender hover:border-accent-lavender/30 transition-all duration-200 text-sm font-medium"
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-background-primary/60 border border-border-primary rounded-lg text-text-secondary hover:text-accent-lavender data-[theme=light]:hover:text-accent-glacier transition-all duration-200 text-sm font-medium"
                       >
                         Ver Código
                       </a>

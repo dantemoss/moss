@@ -10,18 +10,19 @@ const config: Config = {
     extend: {
       colors: {
         background: {
-          primary: '#0B0F19',
-          secondary: '#101828',
+          primary: 'var(--background-primary)',
+          secondary: 'var(--background-secondary)',
         },
         text: {
-          primary: '#F2F2F2',
-          secondary: '#A1A1AA',
+          primary: 'var(--text-primary)',
+          secondary: 'var(--text-secondary)',
         },
         accent: {
-          lavender: '#B692F6',
+          lavender: 'var(--accent-lavender)',
+          glacier: 'var(--accent-glacier)',
         },
         border: {
-          primary: '#2C2F36',
+          primary: 'var(--border-primary)',
         }
       },
       fontFamily: {
