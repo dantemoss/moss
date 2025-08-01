@@ -20,33 +20,34 @@ export default function Hero() {
             className="inline-flex items-center gap-2 bg-background-secondary border border-border-primary rounded-2xl px-4 py-2 mb-8"
           >
             <Sparkles size={16} className="text-accent-lavender" />
-            <span className="text-text-secondary text-sm">Available for opportunities</span>
+            <span className="text-text-secondary text-sm">Disponible para oportunidades</span>
           </motion.div>
         </motion.div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6"
-        >
-          Hi, I'm{' '}
-          <span className="gradient-text">Dante</span>
-          <br />
-          I build elegant, AI-powered
-          <br />
-          web experiences.
-        </motion.h1>
+                  <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6"
+          >
+            Hola, soy{' '}
+            <span className="gradient-text">Dante</span>
+            <br />
+            Desarrollador Full Stack
+            <br />
+            con enfoque en seguridad.
+          </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-xl text-text-secondary mb-8 max-w-2xl mx-auto"
-        >
-          Full-stack developer passionate about creating intuitive and powerful applications 
-          that leverage cutting-edge AI technologies to solve real-world problems.
-        </motion.p>
+                  <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="text-xl text-text-secondary mb-8 max-w-2xl mx-auto"
+          >
+                         Desarrollador Web Full Stack con orientación a la seguridad informática. 
+             Experto en ReactJS, Next.js, TypeScript y Node.js. Actualmente trabajo en OSPADEP 
+             desarrollando herramientas internas para el sector salud.
+          </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -58,7 +59,7 @@ export default function Hero() {
             href="#projects"
             className="inline-flex items-center gap-2 bg-accent-lavender hover:bg-purple-500 text-white font-medium px-6 py-3 rounded-2xl transition-all duration-200 shadow-md hover:shadow-lg"
           >
-            View Projects
+            Ver Proyectos
             <ArrowRight size={16} />
           </a>
           
@@ -66,7 +67,7 @@ export default function Hero() {
             href="#contact"
             className="inline-flex items-center gap-2 border border-border-primary hover:border-accent-lavender text-text-primary hover:text-accent-lavender font-medium px-6 py-3 rounded-2xl transition-all duration-200"
           >
-            Get in Touch
+            Contactar
           </a>
         </motion.div>
       </div>

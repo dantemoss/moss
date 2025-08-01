@@ -12,6 +12,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'Dante Moscoso - Portfolio',
   description: 'Full-stack developer specializing in AI-powered web experiences',
+  icons: {
+    icon: '/new_logo_favicon.ico',
+  },
 }
 
 export default function RootLayout({

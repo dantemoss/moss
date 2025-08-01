@@ -1,0 +1,36 @@
+🧠 Sobre mí
+Desarrollador Web Full Stack con orientación a la seguridad informática y experiencia tanto en frontend como backend. Manejo tecnologías modernas como ReactJS, Next.js, TypeScript, Node.js, MongoDB y PostgreSQL. Actualmente trabajo como Auxiliar de Sistemas en OSPADEP, donde desarrollé herramientas internas reales para uso diario en el sector salud.
+
+Estoy certificado por Microsoft en Power Platform (PL-900) y tengo sólidos conocimientos en automatización con Power Automate, Power Apps y Power BI, además de experiencia en herramientas de desarrollo como GitHub, Postman y Azure DevOps.
+
+Apasionado por la innovación, actualmente curso la Tecnicatura en Ciberseguridad (Teclab), enfocándome en aplicar buenas prácticas en arquitecturas seguras, escalables y modernas. Me apoyo en herramientas con inteligencia artificial como Cursor, Claude, GPT-4, Copilot y otras para maximizar mi productividad y calidad de código.
+
+🧩 Certificaciones
+📜 Microsoft Certified: Power Platform Fundamentals (PL-900) – ago. 2024
+
+💻 Carrera de Desarrollo de Aplicaciones – Coderhouse (ene. 2024)
+
+⚛️ Certificado ReactJS – Coderhouse (ene. 2023)
+
+🌐 Carrera Full Stack Developer – Coderhouse (ene. 2023)
+
+📜 Certificado JavaScript – Coderhouse (nov. 2022)
+
+💡 Certificado Desarrollo Web – Coderhouse (sept. 2022)
+
+🌐 Curso HTML & CSS – Digital House
+
+💼 Experiencia
+🔹 Auxiliar de Sistemas – O.S.P.A.D.E.P. (Feb 2025 – Actualidad)
+Desarrollo del Cotizador Online de Planes Médicos, herramienta 100% funcional utilizada por el equipo comercial para generar cotizaciones en 3 pasos para individuos, familias y empresas.
+
+Automatización de tareas y soporte técnico a usuarios internos.
+
+Integraciones con bases de datos y mejoras continuas en procesos internos.
+
+🔹 Trainee Low-Code Developer – ReadyMind (May 2024 – Ago 2024)
+Entrenamiento intensivo en Microsoft Power Platform, obteniendo la certificación PL-900.
+
+Desarrollo de apps internas con PowerApps, automatización de flujos con Power Automate y dashboards con Power BI.
+
+Trabajo colaborativo en GitHub y Azure DevOps.
