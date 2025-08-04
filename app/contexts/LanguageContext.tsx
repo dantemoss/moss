@@ -73,6 +73,25 @@ const translations = {
     'contact.services.api': '• Desarrollo de APIs',
     'contact.services.uiux': '• Diseño UI/UX',
     'contact.services.consulting': '• Consultoría técnica',
+
+    // Projects
+    'projects.title': 'Proyectos Destacados',
+    'projects.subtitle': 'Una colección de mis trabajos más recientes, mostrando mi pasión por crear soluciones innovadoras y experiencias de usuario excepcionales.',
+    'projects.window.title': 'Projects Explorer - Portfolio',
+    'projects.viewDemo': 'Ver Demo',
+    'projects.viewCode': 'Ver Código',
+    'projects.aiChat.title': 'AI Chat Assistant',
+    'projects.aiChat.description': '🚀 Revolucionario asistente de IA conversacional con memoria contextual y capacidades de voz. Transforma la forma de interactuar con la tecnología.',
+    'projects.ecommerce.title': 'E-commerce Platform',
+    'projects.ecommerce.description': '💎 Plataforma de comercio electrónico de próxima generación con gestión de inventario en tiempo real y análisis avanzados.',
+    'projects.taskManager.title': 'Task Management App',
+    'projects.taskManager.description': '⚡ Aplicación de gestión de tareas colaborativa con actualizaciones en tiempo real y seguimiento de progreso inteligente.',
+    'projects.portfolio.title': 'Portfolio Website',
+    'projects.portfolio.description': '🎨 Portfolio moderno y responsivo con animaciones fluidas y diseño elegante que muestra proyectos y habilidades.',
+    'projects.analytics.title': 'Data Analytics Dashboard',
+    'projects.analytics.description': '📊 Dashboard de análisis de datos interactivo con visualizaciones dinámicas y reportes en tiempo real.',
+    'projects.social.title': 'Social Media App',
+    'projects.social.description': '🌐 Aplicación de redes sociales con funcionalidades avanzadas de mensajería y contenido multimedia.',
   },
   en: {
     // Hero
@@ -133,6 +152,25 @@ const translations = {
     'contact.services.api': '• API development',
     'contact.services.uiux': '• UI/UX design',
     'contact.services.consulting': '• Technical consulting',
+
+    // Projects
+    'projects.title': 'Featured Projects',
+    'projects.subtitle': 'A collection of my most recent work, showcasing my passion for creating innovative solutions and exceptional user experiences.',
+    'projects.window.title': 'Projects Explorer - Portfolio',
+    'projects.viewDemo': 'View Demo',
+    'projects.viewCode': 'View Code',
+    'projects.aiChat.title': 'AI Chat Assistant',
+    'projects.aiChat.description': '🚀 Revolutionary conversational AI assistant with contextual memory and voice capabilities. Transforms the way we interact with technology.',
+    'projects.ecommerce.title': 'E-commerce Platform',
+    'projects.ecommerce.description': '💎 Next-generation e-commerce platform with real-time inventory management and advanced analytics.',
+    'projects.taskManager.title': 'Task Management App',
+    'projects.taskManager.description': '⚡ Collaborative task management application with real-time updates and intelligent progress tracking.',
+    'projects.portfolio.title': 'Portfolio Website',
+    'projects.portfolio.description': '🎨 Modern and responsive portfolio with fluid animations and elegant design showcasing projects and skills.',
+    'projects.analytics.title': 'Data Analytics Dashboard',
+    'projects.analytics.description': '📊 Interactive data analytics dashboard with dynamic visualizations and real-time reports.',
+    'projects.social.title': 'Social Media App',
+    'projects.social.description': '🌐 Social media application with advanced messaging features and multimedia content.',
   }
 }
 

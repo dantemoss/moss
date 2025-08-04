@@ -2,11 +2,12 @@
 
 import { motion } from 'framer-motion'
 import Folder from './Folder'
+import { useLanguage } from '../app/contexts/LanguageContext'
 
 interface Project {
   id: number
-  title: string
-  description: string
+  titleKey: string
+  descriptionKey: string
   technologies: string[]
   color: string
   icon: string
@@ -17,8 +18,8 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "AI Chat Assistant",
-    description: "🚀 Revolucionario asistente de IA conversacional con memoria contextual y capacidades de voz. Transforma la forma de interactuar con la tecnología.",
+    titleKey: 'projects.aiChat.title',
+    descriptionKey: 'projects.aiChat.description',
     technologies: ["Next.js", "TypeScript", "OpenAI API", "Tailwind CSS"],
     color: "#10A37F",
     icon: "🤖",
@@ -27,8 +28,8 @@ const projects: Project[] = [
   },
   {
     id: 2,
-    title: "E-commerce Platform",
-    description: "💎 Plataforma de comercio electrónico de próxima generación con gestión de inventario en tiempo real y análisis avanzados.",
+    titleKey: 'projects.ecommerce.title',
+    descriptionKey: 'projects.ecommerce.description',
     technologies: ["React", "Node.js", "MongoDB", "Stripe"],
     color: "#6366F1",
     icon: "🛒",
@@ -37,8 +38,8 @@ const projects: Project[] = [
   },
   {
     id: 3,
-    title: "Task Management App",
-    description: "⚡ Aplicación de gestión de tareas colaborativa con actualizaciones en tiempo real y seguimiento de progreso inteligente.",
+    titleKey: 'projects.taskManager.title',
+    descriptionKey: 'projects.taskManager.description',
     technologies: ["Vue.js", "Firebase", "Vuetify", "PWA"],
     color: "#F59E0B",
     icon: "📋",
@@ -47,8 +48,8 @@ const projects: Project[] = [
   },
   {
     id: 4,
-    title: "Portfolio Website",
-    description: "🎨 Portfolio moderno y responsivo con animaciones fluidas y diseño elegante que muestra proyectos y habilidades.",
+    titleKey: 'projects.portfolio.title',
+    descriptionKey: 'projects.portfolio.description',
     technologies: ["Next.js", "Framer Motion", "Tailwind CSS", "TypeScript"],
     color: "#B692F6",
     icon: "✨",
@@ -57,8 +58,8 @@ const projects: Project[] = [
   },
   {
     id: 5,
-    title: "Data Analytics Dashboard",
-    description: "📊 Dashboard de análisis de datos interactivo con visualizaciones dinámicas y reportes en tiempo real.",
+    titleKey: 'projects.analytics.title',
+    descriptionKey: 'projects.analytics.description',
     technologies: ["React", "D3.js", "Node.js", "PostgreSQL"],
     color: "#EF4444",
     icon: "📈",
@@ -67,8 +68,8 @@ const projects: Project[] = [
   },
   {
     id: 6,
-    title: "Social Media App",
-    description: "🌐 Aplicación de redes sociales con funcionalidades avanzadas de mensajería y contenido multimedia.",
+    titleKey: 'projects.social.title',
+    descriptionKey: 'projects.social.description',
     technologies: ["React Native", "Firebase", "Redux", "Socket.io"],
     color: "#06B6D4",
     icon: "📱",
@@ -80,7 +81,7 @@ const projects: Project[] = [
 // Linux Window Component
 function LinuxWindow({ children, title }: { children: React.ReactNode; title: string }) {
   return (
-            <div className="bg-background-secondary border border-border-primary rounded-lg shadow-2xl">
+    <div className="bg-background-secondary border border-border-primary rounded-lg shadow-2xl">
       {/* Window Title Bar */}
       <div className="bg-gradient-to-r from-gray-700 to-gray-800 px-4 py-2 flex items-center justify-between">
         {/* Window Controls */}
@@ -111,6 +112,8 @@ function LinuxWindow({ children, title }: { children: React.ReactNode; title: st
 }
 
 export default function Projects() {
+  const { t } = useLanguage()
+  
   return (
     <section id="projects" className="py-32 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -122,16 +125,15 @@ export default function Projects() {
           className="text-center mb-32"
         >
           <h2 className="text-4xl sm:text-5xl font-display font-bold mb-8 bg-gradient-to-r from-text-primary to-accent-lavender bg-clip-text text-transparent">
-            Proyectos Destacados
+            {t('projects.title')}
           </h2>
           <p className="text-text-secondary text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed">
-            Una colección de mis trabajos más recientes, mostrando mi pasión por crear 
-            soluciones innovadoras y experiencias de usuario excepcionales.
+            {t('projects.subtitle')}
           </p>
         </motion.div>
 
         {/* Single Linux Window containing all projects */}
-        <LinuxWindow title="Projects Explorer - Portfolio">
+        <LinuxWindow title={t('projects.window.title')}>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
             {projects.map((project, index) => (
               <motion.div
@@ -154,7 +156,7 @@ export default function Projects() {
                           {project.icon}
                         </div>,
                         <div key="2" className="w-full h-full flex items-center justify-center text-xl font-bold text-gray-600">
-                          {project.title.split(' ')[0]}
+                          {t(project.titleKey).split(' ')[0]}
                         </div>,
                         <div key="3" className="w-full h-full flex items-center justify-center text-sm text-gray-500">
                           {project.technologies[0]}
@@ -168,11 +170,11 @@ export default function Projects() {
                 <div className="text-center w-full space-y-6">
                   <div>
                     <h3 className="text-2xl font-display font-bold text-text-primary mb-4 group-hover:text-accent-lavender transition-colors duration-300">
-                      {project.title}
+                      {t(project.titleKey)}
                     </h3>
                     
                     <p className="text-text-secondary text-base leading-relaxed line-clamp-3">
-                      {project.description}
+                      {t(project.descriptionKey)}
                     </p>
                   </div>
 
@@ -200,8 +202,9 @@ export default function Projects() {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 bg-accent-glacier/10 border border-border-primary rounded-lg text-accent-glacier hover:bg-accent-glacier/20 data-[theme=dark]:bg-accent-lavender/10 data-[theme=dark]:text-accent-lavender data-[theme=dark]:hover:bg-accent-lavender/20 transition-all duration-200 text-sm font-medium"                      >
-                        Ver Demo
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-accent-glacier/10 border border-border-primary rounded-lg text-accent-glacier hover:bg-accent-glacier/20 data-[theme=dark]:bg-accent-lavender/10 data-[theme=dark]:text-accent-lavender data-[theme=dark]:hover:bg-accent-lavender/20 transition-all duration-200 text-sm font-medium"
+                      >
+                        {t('projects.viewDemo')}
                       </a>
                     )}
                     {project.githubUrl && (
@@ -211,7 +214,7 @@ export default function Projects() {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-4 py-2 bg-background-primary/60 border border-border-primary rounded-lg text-text-secondary hover:text-accent-lavender data-[theme=light]:hover:text-accent-glacier transition-all duration-200 text-sm font-medium"
                       >
-                        Ver Código
+                        {t('projects.viewCode')}
                       </a>
                     )}
                   </div>
