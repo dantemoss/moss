@@ -73,7 +73,7 @@ const techIcons: TechIcon[] = [
   { id: 'postgresql', name: 'PostgreSQL', icon: getSimpleIcon('Postgresql')?.path || '', color: `#${getSimpleIcon('Postgresql')?.hex || '4169E1'}`, size: 40, points: 18, effect: '+datos' },
   { id: 'supabase', name: 'Supabase', icon: getSimpleIcon('Supabase')?.path || '', color: `#${getSimpleIcon('Supabase')?.hex || '3ECF8E'}`, size: 40, points: 22, effect: '+backend-as-a-service' },
   { id: 'firebase', name: 'Firebase', icon: getSimpleIcon('Firebase')?.path || '', color: `#${getSimpleIcon('Firebase')?.hex || 'FFCA28'}`, size: 40, points: 20, effect: '+servicios' },
-  { id: 'visualstudiocode', name: 'VS Code', icon: getSimpleIcon('Visualstudiocode')?.path || '', color: `#${getSimpleIcon('Visualstudiocode')?.hex || '007ACC'}`, size: 40, points: 5, effect: '+productividad' },
+      { id: 'visualstudiocode', name: 'VS Code', icon: getSimpleIcon('visualstudiocode')?.path || '', color: `#${getSimpleIcon('visualstudiocode')?.hex || '007ACC'}`, size: 40, points: 5, effect: '+productividad' },
   { id: 'openai', name: 'OpenAI', icon: getSimpleIcon('Openai')?.path || '', color: `#${getSimpleIcon('Openai')?.hex || '10A37F'}`, size: 40, points: 35, effect: '+IA' },
   { id: 'google', name: 'Google', icon: getSimpleIcon('Google')?.path || '', color: `#${getSimpleIcon('Google')?.hex || '4285F4'}`, size: 40, points: 15, effect: '+búsqueda' },
 ]
@@ -194,13 +194,17 @@ export default function TechStackPlayground() {
 
   // Player movement with keyboard
   const [keysPressed, setKeysPressed] = useState<Set<string>>(new Set())
+  const [isGameActive, setIsGameActive] = useState(false)
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       const key = event.key.toLowerCase()
       if (['w', 'a', 's', 'd', 'arrowup', 'arrowdown', 'arrowleft', 'arrowright'].includes(key)) {
-        event.preventDefault()
-        setKeysPressed(prev => new Set(prev).add(key))
+        // Solo prevenir el comportamiento por defecto si el juego está activo
+        if (isGameActive) {
+          event.preventDefault()
+          setKeysPressed(prev => new Set(prev).add(key))
+        }
       }
     }
 
@@ -215,14 +219,54 @@ export default function TechStackPlayground() {
       }
     }
 
-    window.addEventListener('keydown', handleKeyDown)
-    window.addEventListener('keyup', handleKeyUp)
+    // Solo agregar los event listeners si el juego está activo
+    if (isGameActive) {
+      window.addEventListener('keydown', handleKeyDown)
+      window.addEventListener('keyup', handleKeyUp)
+    }
 
     return () => {
       window.removeEventListener('keydown', handleKeyDown)
       window.removeEventListener('keyup', handleKeyUp)
     }
-  }, [])
+  }, [isGameActive])
+
+  // Activar el juego cuando el componente está visible y el usuario interactúa
+  useEffect(() => {
+    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach(entry => {
+        // Solo activar automáticamente si está visible, pero permitir activación manual
+        if (entry.isIntersecting && !isGameActive) {
+          // No activar automáticamente, esperar interacción del usuario
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(handleIntersection, {
+      threshold: 0.1
+    })
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current)
+    }
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [isGameActive])
+
+  // Desactivar el juego cuando el usuario presiona Escape
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && isGameActive) {
+        setIsGameActive(false)
+        setKeysPressed(new Set())
+      }
+    }
+
+    window.addEventListener('keydown', handleEscape)
+    return () => window.removeEventListener('keydown', handleEscape)
+  }, [isGameActive])
 
   // Update player position based on keys pressed
   useEffect(() => {
@@ -375,10 +419,23 @@ export default function TechStackPlayground() {
         </div>
       </div>
 
+      {/* Game status indicator */}
+      <div className="absolute top-4 left-4 z-30">
+        <div className={`bg-background-primary/80 backdrop-blur-sm border border-border-primary rounded-lg px-3 py-2 shadow-md transition-all duration-300 ${
+          isGameActive ? 'border-accent-lavender/50 data-[theme=light]:border-accent-glacier/50' : ''
+        }`}>
+          <p className="text-xs text-text-secondary font-medium">
+            {isGameActive ? '🟢 Activo' : '⚪ Inactivo'}
+          </p>
+        </div>
+      </div>
+
       {/* Game container */}
       <div
         ref={containerRef}
-        className="relative w-full h-full p-4"
+        className="relative w-full h-full p-4 cursor-pointer"
+        onClick={() => setIsGameActive(true)}
+        onMouseLeave={() => setIsGameActive(false)}
       >
         {/* Player */}
         <PlayerIcon
@@ -441,7 +498,10 @@ export default function TechStackPlayground() {
        <div className="absolute bottom-4 left-4 right-4">
          <div className="bg-background-primary/80 backdrop-blur-sm border border-border-primary rounded-lg p-3">
            <p className="text-xs text-text-secondary text-center">
-             🎮 Usa WASD o las flechas para mover "Me" y comer las tecnologías
+             {isGameActive 
+               ? "🎮 Usa WASD o las flechas para mover 'Me' y comer las tecnologías • ESC para desactivar" 
+               : "🎮 Haz clic aquí para activar el juego y usar WASD"
+             }
            </p>
          </div>
        </div>
