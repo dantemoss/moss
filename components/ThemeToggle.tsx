@@ -10,35 +10,35 @@ export default function ThemeToggle() {
   const { language, toggleLanguage } = useLanguage()
 
   return (
-    <div className="fixed top-4 right-4 z-50 flex gap-2">
-             {/* Language Toggle */}
-       <motion.button
-         onClick={toggleLanguage}
-         whileHover={{ scale: 1.05 }}
-         whileTap={{ scale: 0.95 }}
-         className="p-3 bg-background-secondary border border-border-primary rounded-xl hover:border-accent-glacier/50 transition-all duration-200 shadow-lg hover:shadow-xl backdrop-blur-sm"
-         title={language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
-       >
-         <Languages size={20} className="text-text-primary" />
-       </motion.button>
+    <div className="flex gap-2">
+      {/* Language Toggle */}
+      <motion.button
+        onClick={toggleLanguage}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="p-2 text-text-secondary hover:text-accent-glacier transition-colors duration-200"
+        title={language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+      >
+        <Languages size={20} />
+      </motion.button>
 
-             {/* Theme Toggle */}
-       <motion.button
-         onClick={toggleTheme}
-         whileHover={{ scale: 1.05 }}
-         whileTap={{ scale: 0.95 }}
-         className="p-3 bg-background-secondary border border-border-primary rounded-xl hover:border-accent-glacier/50 transition-all duration-200 shadow-lg hover:shadow-xl backdrop-blur-sm"
-         title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-       >
+      {/* Theme Toggle */}
+      <motion.button
+        onClick={toggleTheme}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="p-2 text-text-secondary hover:text-accent-glacier transition-colors duration-200"
+        title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+      >
         <motion.div
           initial={false}
           animate={{ rotate: theme === 'dark' ? 0 : 180 }}
           transition={{ duration: 0.3 }}
         >
           {theme === 'dark' ? (
-            <Sun size={20} className="text-text-primary" />
+            <Sun size={20} />
           ) : (
-            <Moon size={20} className="text-text-primary" />
+            <Moon size={20} />
           )}
         </motion.div>
       </motion.button>

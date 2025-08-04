@@ -49,7 +49,7 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Desktop Navigation */}
             <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-8">
+              <div className="ml-10 flex items-center space-x-8">
                 {navItems.map((item, index) => (
                   <motion.a
                     key={item.name}
@@ -57,19 +57,25 @@ export default function Layout({ children }: LayoutProps) {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                                         className="text-text-secondary hover:text-accent-glacier transition-colors duration-200 font-medium"
+                    className="text-text-secondary hover:text-accent-glacier transition-colors duration-200 font-medium"
                   >
                     {item.name}
                   </motion.a>
                 ))}
+                
+                {/* Theme and Language Toggles */}
+                <div className="flex items-center space-x-2 ml-4">
+                  <ThemeToggle />
+                </div>
               </div>
             </div>
 
-            {/* Mobile menu button */}
-            <div className="md:hidden">
+            {/* Mobile menu button and toggles */}
+            <div className="md:hidden flex items-center space-x-2">
+              <ThemeToggle />
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                                 className="text-text-secondary hover:text-accent-glacier transition-colors duration-200"
+                className="text-text-secondary hover:text-accent-glacier transition-colors duration-200"
               >
                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -100,9 +106,6 @@ export default function Layout({ children }: LayoutProps) {
           </motion.div>
         )}
       </nav>
-
-      {/* Theme Toggle */}
-      <ThemeToggle />
 
       {/* Main Content */}
       <main className="pt-16">

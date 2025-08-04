@@ -51,6 +51,28 @@ const translations = {
 
     // Common
     'common.loading': 'Cargando...',
+
+    // Contact
+    'contact.title': 'Trabajemos Juntos',
+    'contact.subtitle': 'Siempre estoy interesado en nuevas oportunidades y proyectos emocionantes. Hablemos sobre cómo podemos hacer realidad tus ideas.',
+    'contact.form.name': 'Nombre',
+    'contact.form.namePlaceholder': 'Tu nombre',
+    'contact.form.email': 'Email',
+    'contact.form.emailPlaceholder': 'tu.email@ejemplo.com',
+    'contact.form.message': 'Mensaje',
+    'contact.form.messagePlaceholder': 'Cuéntame sobre tu proyecto...',
+    'contact.form.send': 'Enviar Mensaje',
+    'contact.info.title': 'Ponte en Contacto',
+    'contact.info.description': 'Actualmente estoy disponible para trabajo freelance y oportunidades de tiempo completo. Ya sea que tengas un proyecto en mente o solo quieras charlar, me encantaría saber de ti.',
+    'contact.info.email': 'Email',
+    'contact.info.linkedin': 'LinkedIn',
+    'contact.info.connect': 'Conéctate conmigo',
+    'contact.services.title': 'En qué puedo ayudarte:',
+    'contact.services.webdev': '• Desarrollo web full-stack',
+    'contact.services.ai': '• Integración de IA/ML',
+    'contact.services.api': '• Desarrollo de APIs',
+    'contact.services.uiux': '• Diseño UI/UX',
+    'contact.services.consulting': '• Consultoría técnica',
   },
   en: {
     // Hero
@@ -89,6 +111,28 @@ const translations = {
 
     // Common
     'common.loading': 'Loading...',
+
+    // Contact
+    'contact.title': 'Let\'s Work Together',
+    'contact.subtitle': 'I\'m always interested in new opportunities and exciting projects. Let\'s discuss how we can bring your ideas to life.',
+    'contact.form.name': 'Name',
+    'contact.form.namePlaceholder': 'Your name',
+    'contact.form.email': 'Email',
+    'contact.form.emailPlaceholder': 'your.email@example.com',
+    'contact.form.message': 'Message',
+    'contact.form.messagePlaceholder': 'Tell me about your project...',
+    'contact.form.send': 'Send Message',
+    'contact.info.title': 'Get in Touch',
+    'contact.info.description': 'I\'m currently available for freelance work and full-time opportunities. Whether you have a project in mind or just want to chat, I\'d love to hear from you.',
+    'contact.info.email': 'Email',
+    'contact.info.linkedin': 'LinkedIn',
+    'contact.info.connect': 'Connect with me',
+    'contact.services.title': 'What I can help with:',
+    'contact.services.webdev': '• Full-stack web development',
+    'contact.services.ai': '• AI/ML integration',
+    'contact.services.api': '• API development',
+    'contact.services.uiux': '• UI/UX design',
+    'contact.services.consulting': '• Technical consulting',
   }
 }
 

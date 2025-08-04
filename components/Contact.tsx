@@ -2,8 +2,10 @@
 
 import { motion } from 'framer-motion'
 import { Mail, MessageSquare, Send } from 'lucide-react'
+import { useLanguage } from '../app/contexts/LanguageContext'
 
 export default function Contact() {
+  const { t } = useLanguage()
   return (
     <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
@@ -15,11 +17,10 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-display font-bold mb-4">
-            Let's Work Together
+            {t('contact.title')}
           </h2>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            I'm always interested in new opportunities and exciting projects. 
-            Let's discuss how we can bring your ideas to life.
+            {t('contact.subtitle')}
           </p>
         </motion.div>
 
@@ -34,40 +35,40 @@ export default function Contact() {
             <form className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2">
-                  Name
+                  {t('contact.form.name')}
                 </label>
                 <input
                   type="text"
                   id="name"
                   name="name"
                   className="w-full px-4 py-3 bg-background-secondary border border-border-primary rounded-xl text-text-primary placeholder-text-secondary focus:outline-none focus:border-accent-lavender data-[theme=light]:focus:border-accent-glacier transition-colors duration-200"
-                  placeholder="Your name"
+                  placeholder={t('contact.form.namePlaceholder')}
                 />
               </div>
 
               <div>
                 <label htmlFor="email" className="block text-sm font-medium mb-2">
-                  Email
+                  {t('contact.form.email')}
                 </label>
                 <input
                   type="email"
                   id="email"
                   name="email"
                   className="w-full px-4 py-3 bg-background-secondary border border-border-primary rounded-xl text-text-primary placeholder-text-secondary focus:outline-none focus:border-accent-lavender data-[theme=light]:focus:border-accent-glacier transition-colors duration-200"
-                  placeholder="your.email@example.com"
+                  placeholder={t('contact.form.emailPlaceholder')}
                 />
               </div>
 
               <div>
                 <label htmlFor="message" className="block text-sm font-medium mb-2">
-                  Message
+                  {t('contact.form.message')}
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   rows={5}
                   className="w-full px-4 py-3 bg-background-secondary border border-border-primary rounded-xl text-text-primary placeholder-text-secondary focus:outline-none focus:border-accent-lavender data-[theme=light]:focus:border-accent-glacier transition-colors duration-200 resize-none"
-                  placeholder="Tell me about your project..."
+                  placeholder={t('contact.form.messagePlaceholder')}
                 />
               </div>
 
@@ -76,7 +77,7 @@ export default function Contact() {
                 className="w-full inline-flex items-center justify-center gap-2 bg-accent-lavender hover:bg-purple-500 text-white font-medium px-6 py-3 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg"
               >
                 <Send size={16} />
-                Send Message
+                {t('contact.form.send')}
               </button>
             </form>
           </motion.div>
@@ -91,11 +92,10 @@ export default function Contact() {
           >
             <div>
               <h3 className="text-xl font-display font-semibold mb-6">
-                Get in Touch
+                {t('contact.info.title')}
               </h3>
               <p className="text-text-secondary leading-relaxed mb-8">
-                I'm currently available for freelance work and full-time opportunities. 
-                Whether you have a project in mind or just want to chat, I'd love to hear from you.
+                {t('contact.info.description')}
               </p>
             </div>
 
@@ -106,7 +106,7 @@ export default function Contact() {
               >
                 <Mail size={20} className="text-accent-lavender group-hover:text-purple-400 transition-colors duration-200" />
                 <div>
-                  <div className="font-medium">Email</div>
+                  <div className="font-medium">{t('contact.info.email')}</div>
                   <div className="text-sm text-text-secondary">dante@example.com</div>
                 </div>
               </a>
@@ -119,20 +119,20 @@ export default function Contact() {
               >
                 <MessageSquare size={20} className="text-accent-lavender group-hover:text-purple-400 transition-colors duration-200" />
                 <div>
-                  <div className="font-medium">LinkedIn</div>
-                  <div className="text-sm text-text-secondary">Connect with me</div>
+                  <div className="font-medium">{t('contact.info.linkedin')}</div>
+                  <div className="text-sm text-text-secondary">{t('contact.info.connect')}</div>
                 </div>
               </a>
             </div>
 
             <div className="p-6 bg-background-secondary border border-border-primary rounded-xl">
-              <h4 className="font-display font-semibold mb-3">What I can help with:</h4>
+              <h4 className="font-display font-semibold mb-3">{t('contact.services.title')}</h4>
               <ul className="space-y-2 text-sm text-text-secondary">
-                <li>• Full-stack web development</li>
-                <li>• AI/ML integration</li>
-                <li>• API development</li>
-                <li>• UI/UX design</li>
-                <li>• Technical consulting</li>
+                <li>{t('contact.services.webdev')}</li>
+                <li>{t('contact.services.ai')}</li>
+                <li>{t('contact.services.api')}</li>
+                <li>{t('contact.services.uiux')}</li>
+                <li>{t('contact.services.consulting')}</li>
               </ul>
             </div>
           </motion.div>
